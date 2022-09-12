@@ -11,7 +11,7 @@ type Tasks = {
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await api.get('/tasks/list')
 
-  const tasks = data.map((task: Task) => {
+  const tasks = data?.map((task: Task) => {
     return {
       id: task.id,
       title: task.title,
@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
-const Home = ({ tasks }: Tasks) => {
+const Home = ({ tasks = [] }: Tasks) => {
   console.log(tasks)
   const [task, setTask] = useState('')
   const [taskList, setTaskList] = useState(tasks)
@@ -42,8 +42,8 @@ const Home = ({ tasks }: Tasks) => {
 
   return (
     <>
-      {taskList.map((task) => (
-        <Text key={task.id}>{task.title}</Text>
+      {taskList?.map((task) => (
+        <Text key={task?.id}>{task?.title}</Text>
       ))}
       <Flex padding={2}>
         <Input
