@@ -39,6 +39,7 @@ const Home = () => {
           paddingBottom='8'
           color='white'
           fontSize='lg'
+          fontWeight='semibold'
         >
           Escolha a comida que irá comer no dia de visitar seus amigos
         </Text>
