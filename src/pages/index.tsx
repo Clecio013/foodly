@@ -1,5 +1,5 @@
 import Home from 'modules/Home'
-import { GetServerSideProps } from "next"
+import { GetServerSideProps } from 'next'
 import { getSession } from 'next-auth/react'
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
