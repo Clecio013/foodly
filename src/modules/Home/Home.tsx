@@ -1,6 +1,7 @@
 import { Container, Text, Heading, Button, Box, useToast } from "@chakra-ui/react"
-import { signIn } from 'next-auth/react'
+import { signIn, getSession } from 'next-auth/react'
 import { useRouter } from "next/router"
+import Head from "next/head"
 
 const Home = () => {
   const toast = useToast()
@@ -8,7 +9,7 @@ const Home = () => {
 
   const handleGoogleSignIn = () => {
     signIn('google')
-      .then(() => router.push('/'))
+      .then(() => router.push('/dishes'))
       .catch(() => {
         toast({
           title: 'Houve um erro ao logar 😥',
@@ -27,6 +28,14 @@ const Home = () => {
       backgroundRepeat='no-repeat'
       backgroundSize='cover'
     >
+      <Head>
+        <title>Foodly - Home</title>
+        <meta
+          name='description'
+          content='Venha desfrutar uma comida deliciosa e dar risada com seus amigos!'
+        />
+      </Head>
+
       <Container
         maxW='container.lg'
         display='flex'
