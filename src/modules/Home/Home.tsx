@@ -43,7 +43,7 @@ const Home = () => {
         justifyContent='center'
         height='100vh'
       >
-        <Heading paddingBottom='2' size="2xl" color='white' textShadow='lg'>Foodly teste</Heading>
+        <Heading paddingBottom='2' size="2xl" color='white' textShadow='lg'>Foodly</Heading>
         <Text
           paddingBottom='8'
           color='white'

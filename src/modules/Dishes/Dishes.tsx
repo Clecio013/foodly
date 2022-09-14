@@ -7,7 +7,7 @@ const Dishes = ({ dishes }: DishesProps) => {
   return (
     <Layout>
       <Container maxWidth='container.lg'>
-        <Heading>Pratos deliciosos teste</Heading>
+        <Heading>Pratos deliciosos</Heading>
         <Text>Escolha seu prato e em seguida faça o agendamento do dia que você irá nos visitar</Text>
 
         <List dishes={dishes} />
