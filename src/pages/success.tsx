@@ -12,7 +12,10 @@ const Success = () => {
     const date = new Date(query?.date as string)
 
     const ptDate = new Intl.DateTimeFormat('pt-BR').format(date)
-    const ptHour = `${date.getHours()}h${date.getMinutes()}`
+    const ptHour = `${date.getHours().toString().padStart(2, '0')}h${date
+      .getMinutes()
+      .toString()
+      .padStart(2, '0')}min`
 
     return {
       date: ptDate,
