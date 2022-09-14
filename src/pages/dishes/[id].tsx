@@ -1,4 +1,4 @@
-import { Dish } from '@prisma/client'
+import type { Dish } from 'types/Dish'
 import DishModule from 'modules/Dish'
 import { GetServerSideProps } from 'next'
 import api from 'services/axios'
