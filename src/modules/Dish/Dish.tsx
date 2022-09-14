@@ -43,7 +43,7 @@ const Dish = ({ title, description, imageUrl, id }: DishProps) => {
           isClosable: true,
           position: 'top-right'
         })
-        router.push(`success/?date=${appointmentDate}`)
+        router.push(`/success/?date=${appointmentDate}`)
       })
       .catch(() => {
         toast({
