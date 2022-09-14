@@ -61,13 +61,13 @@ const Dish = ({ title, description, imageUrl, id }: DishProps) => {
     <>
       <Layout>
         <Container maxW={'container.lg'}>
-          <Image src={imageUrl}  width='100%' maxHeight='400px' bgSize={'cover'}/>
-          <Heading>{title}</Heading>
+          <Image src={imageUrl}  width='100%' maxHeight='400px' bgSize={'cover'} marginBottom={4} borderRadius={8} />
+          <Heading fontSize={24} paddingBottom={4}>{title}</Heading>
           <Text paddingBottom={'4'}>{description}</Text>
 
           <FormControl paddingBottom={'4'}>
             <FormLabel>Escolha a data que deseja agendar</FormLabel>
-            <Input type='date' onChange={handleChangeDate} />
+            <Input type='datetime-local' onChange={handleChangeDate} placeholder='Escolha a data que deseja agendar a visita' />
           </FormControl>
 
           <Button width={'full'} onClick={handleCreateAppointment}>Adicionar</Button>
