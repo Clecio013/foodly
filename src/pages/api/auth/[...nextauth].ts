@@ -22,7 +22,12 @@ export default NextAuth({
     async session({ session, user }) {
       return {
         ...session,
-        userId: user.id
+        user: {
+          userId: user.id,
+          email: user.email,
+          image: user.image,
+          name: user.name
+        }
       }
     }
   }
