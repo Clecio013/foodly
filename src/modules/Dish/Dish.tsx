@@ -1,10 +1,19 @@
-import { Dish as DishProps } from "@prisma/client"
 import Layout from "shared/components/Layout"
 import { Heading, Text, Image, Container, Button, FormControl, FormLabel, Input, useToast } from "@chakra-ui/react"
 import { useSession } from "next-auth/react"
 import api from "services/axios"
 import { ChangeEvent, useState } from "react"
 import { useRouter } from "next/router"
+
+type DishProps = {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  userId: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 const Dish = ({ title, description, imageUrl, id }: DishProps) => {
   const { data: session } = useSession()
