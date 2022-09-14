@@ -58,6 +58,7 @@ model User {
   image         String?
 
   dishes        Dish[]
+  appointments  Appointment[]
   accounts      Account[]
   sessions      Session[]
 }
@@ -76,6 +77,23 @@ model Dish {
   title       String
   description String
   imageUrl    String
+
+  user        User @relation(fields: [userId], references: [id])
+  userId      String
+
+  appointment Appointment[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Appointment {
+  id          String    @id @default(cuid())
+
+  date DateTime
+
+  dish   Dish @relation(fields: [dishId], references: [id])
+  dishId String
 
   user        User @relation(fields: [userId], references: [id])
   userId      String
