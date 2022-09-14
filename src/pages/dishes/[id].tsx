@@ -8,9 +8,7 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const { id } = params
-
-  const dish = await api.get(`/dishes/${id}`)
+  const dish = await api.get(`/dishes/${params?.id}`)
 
   return {
     props: {
