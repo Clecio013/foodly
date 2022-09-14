@@ -1,5 +1,5 @@
 import { Text, Box, Image } from '@chakra-ui/react'
-import type { Dish } from 'types/Dish'
+import type { Dish } from '@prisma/client'
 import Link from 'next/link'
 
 const Card = ({ id, title, description, imageUrl }: Dish) => (
