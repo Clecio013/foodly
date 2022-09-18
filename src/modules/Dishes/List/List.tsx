@@ -10,7 +10,7 @@ const List = ({ dishes }: Dishes) => {
 
   return (
     <SimpleGrid columns={gridVariant} spacing={10} paddingTop={8}>
-      {dishes?.map(dish => (
+      {dishes?.map((dish) => (
         <Card key={dish.id} {...dish} />
       ))}
     </SimpleGrid>

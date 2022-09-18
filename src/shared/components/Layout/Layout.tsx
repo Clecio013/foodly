@@ -1,19 +1,22 @@
-import { Box } from "@chakra-ui/react"
-import Navbar from "../Navbar"
-import React, { ReactChildren, ReactChild, ReactNode, ReactFragment } from 'react';
+import { Box } from '@chakra-ui/react'
+import Navbar from '../Navbar'
+import React, {
+  ReactChildren,
+  ReactChild,
+  ReactNode,
+  ReactFragment
+} from 'react'
 
 type Props = {
-  children:  ReactChild | ReactChild[] | ReactChildren | ReactChildren[];
-};
+  children: ReactChild | ReactChild[] | ReactChildren | ReactChildren[]
+}
 
 const Layout = ({ children }: Props) => {
   return (
     <>
       <Navbar />
       <Box paddingTop={4}>
-        <>
-          {children}
-        </>
+        <>{children}</>
       </Box>
     </>
   )

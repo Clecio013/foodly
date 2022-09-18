@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 import {
   Box,
   Flex,
@@ -15,12 +15,12 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Text,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { useSession, signOut } from 'next-auth/react';
+  Text
+} from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import { useSession, signOut } from 'next-auth/react'
 
-const Links = ['Pratos', 'Agendamentos'];
+const Links = ['Pratos', 'Agendamentos']
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -29,15 +29,16 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: useColorModeValue('gray.200', 'gray.700')
     }}
-    href={'#'}>
+    href={'#'}
+  >
     {children}
   </Link>
-);
+)
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const session = useSession()
 
   function handleSignOut() {
@@ -55,10 +56,7 @@ const Navbar = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-          <HStack
-            as={'nav'}
-            spacing={4}
-            display={{ base: 'none', md: 'flex' }}>
+          <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
             {Links.map((link) => (
               <NavLink key={link}>{link}</NavLink>
             ))}
@@ -74,10 +72,13 @@ const Navbar = () => {
               rounded={'full'}
               variant={'link'}
               cursor={'pointer'}
-              minW={0}>
+              minW={0}
+            >
               <Avatar
                 size={'sm'}
-                src={session?.data?.user?.image || session?.data?.user?.name || ''}
+                src={
+                  session?.data?.user?.image || session?.data?.user?.name || ''
+                }
               />
             </MenuButton>
             <MenuList>
@@ -99,7 +100,7 @@ const Navbar = () => {
         </Box>
       ) : null}
     </Box>
-  );
+  )
 }
 
 export default Navbar
