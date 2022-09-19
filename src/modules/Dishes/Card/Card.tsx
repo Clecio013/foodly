@@ -6,13 +6,22 @@ type Props = Pick<Dish, 'id' | 'title' | 'description' | 'imageUrl'>
 
 const Card = ({ id, title, description, imageUrl }: Props) => (
   <Link href={`/dishes/${id}`}>
-    <Box>
-      <Image src={imageUrl} borderRadius="2xl" marginBottom={'2'} />
+    <Box boxShadow={'md'} borderRadius='2xl'>
+      <Image
+        src={imageUrl}
+        borderRadius="2xl"
+        marginBottom={'2'}
+        height='400px'
+        width='100%'
+        objectFit='cover'
+      />
 
-      <Text fontSize="lg" fontWeight="bold" paddingBottom={'1'}>
-        {title}
-      </Text>
-      <Text>{description}</Text>
+      <Box padding={'3'}>
+        <Text fontSize="lg" fontWeight="bold" paddingBottom={'1'}>
+          {title}
+        </Text>
+        <Text>{description}</Text>
+      </Box>
     </Box>
   </Link>
 )
