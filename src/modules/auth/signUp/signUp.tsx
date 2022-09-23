@@ -17,7 +17,6 @@ import { useState } from 'react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
 import { AiFillGithub } from 'react-icons/ai'
-import Link from 'next/link'
 import { signIn } from 'next-auth/react'
 import { useSession } from 'next-auth/react'
 
